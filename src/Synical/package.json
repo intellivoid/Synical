@@ -1,0 +1,25 @@
+{
+    "package": {
+        "package_name": "net.intellivoid.synical",
+        "name": "Synical Engine Library",
+        "version": "1.0.0.0",
+        "author": "Zi Xing Narrakas",
+        "organization": "Intellivoid Technologies",
+        "description": "The backend provider for the Synical engine",
+        "url": "https://github.com/intellivoid/synical",
+        "dependencies": [],
+        "configuration": {
+            "autoload_method": "generated_spl",
+            "main": null,
+            "post_installation": [],
+            "pre_installation": []
+        }
+    },
+    "components": [
+        {
+            "required": true,
+            "file": "Synical.php"
+        }
+    ],
+    "files": []
+}
