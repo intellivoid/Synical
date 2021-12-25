@@ -125,12 +125,12 @@
          * @throws CannotUpdateChatMembersCacheException
          * @throws DatabaseException
          */
-        public function getChatMemberCache(Chat $chat): ChatMemberCache
+        public function getChatMemberCache(Chat $chat, bool $force_update=True): ChatMemberCache
         {
             try
             {
                 $returnResults = $this->getRecord($chat->getId());
-                if((time() - $returnResults->LastUpdatedTimestamp) < 300)
+                if((time() - $returnResults->LastUpdatedTimestamp) < 300 && $force_update == false)
                     return $returnResults;
                 $needsUpdate = true;
             }
