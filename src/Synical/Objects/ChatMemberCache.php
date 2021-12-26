@@ -4,6 +4,7 @@
 
     namespace Synical\Objects;
 
+    use Longman\TelegramBot\Entities\User;
     use Synical\Objects\AdminCacheRecord\AdministratorPermissions;
 
     class ChatMemberCache
@@ -50,9 +51,27 @@
         }
 
         /**
-         * Returns an aray representation of the object
+         * Returns an existing administrator permission if available
+         *
+         * @param User $user
+         * @return AdministratorPermissions|null
+         */
+        public function getAdministratorUser(User $user): ?AdministratorPermissions
+        {
+            foreach($this->AdministratorPermissions as $permission)
+            {
+                if($user->getId() == $permission->ID)
+                    return $permission;
+            }
+
+            return null;
+        }
+
+        /**
+         * Returns an array representation of the object
          *
          * @return array
+         * @noinspection PhpArrayShapeAttributeCanBeAddedInspection
          */
         public function toArray(): array
         {
