@@ -121,6 +121,7 @@
          * A smart function to get the chat member cache
          *
          * @param Chat $chat
+         * @param bool $force_update
          * @return ChatMemberCache
          * @throws CannotUpdateChatMembersCacheException
          * @throws DatabaseException
@@ -156,7 +157,7 @@
             if($returnResults == null)
                 $returnResults = new ChatMemberCache();
 
-            $chatMembersResponse = $Results->getRawData()["result"];
+            $chatMembersResponse = $Results->getResult();
 
             /** @var ChatMemberOwner $chatMemberOwner */
             foreach($chatMembersResponse as $chatMemberOwner)
