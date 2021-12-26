@@ -157,6 +157,8 @@
             if($returnResults == null)
                 $returnResults = new ChatMemberCache();
 
+            $returnResults->ChatID = $chat->getId();
+            $returnResults->AdministratorPermissions = [];
             $chatMembersResponse = $Results->getResult();
 
             /** @var ChatMemberOwner $chatMemberOwner */
