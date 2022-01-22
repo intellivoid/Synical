@@ -51,6 +51,14 @@
         },
         {
             "required": true,
+            "file": "Exceptions/UserWarningRecordNotFoundException.php"
+        },
+        {
+            "required": true,
+            "file": "Exceptions/TooManyWarningsException.php"
+        },
+        {
+            "required": true,
             "file": "Exceptions/CannotUpdateChatMembersCacheException.php"
         },
         {
@@ -59,11 +67,23 @@
         },
         {
             "required": true,
+            "file": "Objects/UserWarning/Warning.php"
+        },
+        {
+            "required": true,
+            "file": "Objects/UserWarning.php"
+        },
+        {
+            "required": true,
             "file": "Objects/ChatMemberCache.php"
         },
         {
             "required": true,
             "file": "Objects/AdminCacheRecord/AdministratorPermissions.php"
+        },
+        {
+            "required": true,
+            "file": "Managers/UserWarningManager.php"
         },
         {
             "required": true,

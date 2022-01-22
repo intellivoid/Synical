@@ -9,6 +9,7 @@
     use acm2\Objects\Schema;
     use mysqli;
     use Synical\Managers\ChatMemberCacheManager;
+    use Synical\Managers\UserWarningManager;
 
     class Synical
     {
@@ -31,6 +32,11 @@
          * @var ChatMemberCacheManager
          */
         private $ChatMemberCacheManager;
+
+        /**
+         * @var UserWarningManager
+         */
+        private $UserWarningManager;
 
         /**
          * @throws ConfigurationNotDefinedException
@@ -56,6 +62,7 @@
             $this->DatabaseConnection = null;
 
             $this->ChatMemberCacheManager = new ChatMemberCacheManager($this);
+            $this->UserWarningManager = new UserWarningManager($this);
         }
 
         /**
@@ -105,5 +112,13 @@
         public function getChatMemberCacheManager(): ChatMemberCacheManager
         {
             return $this->ChatMemberCacheManager;
+        }
+
+        /**
+         * @return UserWarningManager
+         */
+        public function getUserWarningManager(): UserWarningManager
+        {
+            return $this->UserWarningManager;
         }
     }
