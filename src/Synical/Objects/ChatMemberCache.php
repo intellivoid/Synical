@@ -53,14 +53,14 @@
         /**
          * Returns an existing administrator permission if available
          *
-         * @param User $user
+         * @param int $id
          * @return AdministratorPermissions|null
          */
-        public function getAdministratorUser(User $user): ?AdministratorPermissions
+        public function getAdministratorUser(int $id): ?AdministratorPermissions
         {
             foreach($this->AdministratorPermissions as $permission)
             {
-                if($user->getId() == $permission->ID)
+                if($id == $permission->ID)
                     return $permission;
             }
 
